@@ -1,5 +1,3 @@
-# hotelspro_client
-
 hotelspro-client
 ==================
 
