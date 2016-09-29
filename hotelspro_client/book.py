@@ -2,7 +2,7 @@ import requests
 
 
 class BookProcessor(object):
-    def __init__(self, username, password, params):
+    def __init__(self, username, password):
         main_url = 'http://localhost:8000/api/v2'
         self.username = username
         self.password = password
@@ -13,12 +13,11 @@ class BookProcessor(object):
         self.cancel_url = main_url + '/cancel'
         self.booking_url = main_url + '/bookings'
         self.join_url = '/?'
-        self.params = params
 
-    def search(self):
+    def search(self, params):
         """Search method returns the results of searching parameters."""
-        for item in self.params:
-            self.join_url += (item + "=" + self.params[item] + "&")
+        for item in params:
+            self.join_url += (item + "=" + params[item] + "&")
         complete_url = '{}{}'.format(self.search_url, self.join_url)
         r = requests.get(complete_url, auth=(self.username, self.password))
         if r.status_code == 200:
