@@ -23,9 +23,6 @@ class BookProcessor(object):
         r = requests.get(complete_url, auth=(self.username, self.password))
         if r.status_code == 200:
             return r.json()
-        else:
-            print "search:", r.status_code
-
 
     def availability(self, code):
         """Availability method gets the product code
@@ -33,16 +30,12 @@ class BookProcessor(object):
         r = requests.get(self.availability_url + "/" + code, auth=(self.username, self.password))
         if r.status_code == 200:
             return r.json()
-        else:
-            print "availability:", r.status_code
 
     def provision(self, code):
         """Provision method gets the product code and makes post for the request """
         r = requests.post(self.provision_url + "/" + code, auth=(self.username, self.password))
         if r.status_code == 200:
             return r.json()
-        else:
-            print "provision:", r.status_code
 
     def book(self, code, post_data):
         """Book method takes 2 parameters.
@@ -57,19 +50,14 @@ class BookProcessor(object):
 
         if r.status_code == 200:
             return r.json()
-        else:
-            print "book:", r.status_code
-
 
     def bookings(self, code=""):
         """Bookings method returns the books which is succeeded"""
         r = requests.get(self.booking_url + "/" + code, auth=(self.username, self.password))
         if r.status_code == 200:
-            print r.json()
-        else:
-            r.status_code
+            return r.json()
 
     def cancel(self, code):
         """Cancel method takes a parameter which is book code and make cancellation for this book. """
         r = requests.post(self.cancel_url + "/" + code, auth=(self.username, self.password))
-        print "cancel:", r.status_code
+        return r.json()
