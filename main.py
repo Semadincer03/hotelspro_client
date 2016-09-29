@@ -5,5 +5,5 @@ if __name__ == '__main__':
               'client_nationality': 'tr', 'currency': 'USD'}
 
 
-    book_processor = BookProcessor(username, password)
+    book_processor = BookProcessor(usename, password)
     print book_processor.search(params)
