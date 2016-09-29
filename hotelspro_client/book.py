@@ -42,11 +42,9 @@ class BookProcessor(object):
         if not code or not post_data:
             StandardError("provision code and postdata information\
                                              is required!")
-        if not isinstance(post_data, dict):
-            raise StandardError("postdata must be a dictionary!")
-
+            if not isinstance(post_data, dict):
+                raise StandardError("postdata must be a dictionary!")
         r = requests.post(self.book_url + "/" + code, post_data, auth=(self.username, self.password))
-
         if r.status_code == 200:
             return r.json()
 
