@@ -32,8 +32,8 @@ class BookProcessor(object):
         """Availability method gets the product code
         that came from search method results and checks it's availability status"""
 
-        if not code:
-            raise StandardError("availability method must take a product code")
+        if not code or not isinstance(code, str):
+            raise StandardError("availability method must take a product code(str)")
         else:
             r = requests.get(self.AVAILABILITY_URL + code, auth=(self.username, self.password))
             if r.status_code == 200:

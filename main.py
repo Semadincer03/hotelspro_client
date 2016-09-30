@@ -5,4 +5,10 @@ if __name__ == '__main__':
               'client_nationality': 'tr', 'currency': 'USD'}
 
     book_processor = BookProcessor(username, password)
+
     print book_processor.search(params)
+    #print book_processor.provision("EOTUIUMRIAAAAAAAAAAAAAAAAAAAAAAAAAHAXbKLQLidSjyppnOHdesYUCAAAAAAAAAAAAAAAHACAAAAAFi4EEHAAB7T6YWOOApvBPIxgAAAAAAAAAAABA")
+    #print book_processor.book("P9284MTPUZD6",{'name':'1,sema,dincer,adult'})
+    #print book_processor.bookings("BTN6G7PHG43M")
+    #print book_processor.cancel("BTN6G7PHG43M")
+
