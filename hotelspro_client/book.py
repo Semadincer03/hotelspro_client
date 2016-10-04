@@ -34,7 +34,7 @@ class BookProcessor(object):
 
         if not code:
             raise ValueError("availability method must take a product code!")
-        if not isinstance(code, str):
+        if not isinstance(code, (str, unicode)):
             raise TypeError("product code type --> str!")
 
         response = requests.get(urljoin(self.BASE_URL, "availability/") + code,
@@ -54,7 +54,7 @@ class BookProcessor(object):
 
         if not code:
             raise ValueError("provision method must take a product code!")
-        if not isinstance(code, str):
+        if not isinstance(code, (str, unicode)):
             raise TypeError("product code type --> str!")
 
         response = requests.post(urljoin(self.BASE_URL, "provision/") + code,
@@ -76,7 +76,7 @@ class BookProcessor(object):
             raise ValueError("book method must take a provision code!")
         if not post_data:
             ValueError("post_data information is required")
-        if not isinstance(code, str):
+        if not isinstance(code, (str, unicode)):
             raise TypeError("provision code type --> str!")
         if not isinstance(post_data, dict):
             raise TypeError("post_data type --> dict!")
@@ -95,7 +95,7 @@ class BookProcessor(object):
     def bookings(self, code=""):
         """Bookings method returns the books which is succeeded"""
 
-        if not isinstance(code, str):
+        if not isinstance(code, (str, unicode)):
             raise TypeError("book code type --> str!")
 
         response = requests.get(urljoin(self.BASE_URL, "bookings/") + code,
@@ -114,7 +114,7 @@ class BookProcessor(object):
 
         if not code:
             raise StandardError("cancel method must take the book code")
-        if not isinstance(code, str):
+        if not isinstance(code, (str, unicode)):
             raise TypeError("book code type --> str!")
 
         response = requests.post(urljoin(self.BASE_URL, "cancel/") + code,
