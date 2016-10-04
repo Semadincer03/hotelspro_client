@@ -7,7 +7,7 @@ from hotelspro_client.book import BookProcessor
 class TestClient(TestCase):
 
     def __init__(self, *args, **kwargs):
-        self._book_processor = BookProcessor("semadincer", "qwer321")
+        self._book_processor = BookProcessor("username", "password")
         self._search_resp = self._book_processor.search({"pax": "1",
                                                 "checkin": "2016-10-03",
                                                 "checkout": "2016-10-05",
