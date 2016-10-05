@@ -22,6 +22,8 @@ class BookProcessor(object):
 
         if response.status_code == 200:
             return response.json()
+        elif response.status_code == 400:
+            raise ValueError("Bad request")
         elif response.status_code == 404:
             raise LookupError("search results cannot be found")
         else:
@@ -42,6 +44,8 @@ class BookProcessor(object):
 
         if response.status_code == 200:
             return response.json()
+        elif response.status_code == 400:
+            raise ValueError("Bad request")
         elif response.status_code == 404:
             raise LookupError("availability results cannot be found")
         else:
@@ -62,6 +66,8 @@ class BookProcessor(object):
 
         if response.status_code == 200:
             return response.json()
+        elif response.status_code == 400:
+            raise ValueError("Bad request")
         elif response.status_code == 404:
             raise LookupError("provision results cannot be found")
         else:
@@ -87,6 +93,8 @@ class BookProcessor(object):
 
         if response.status_code == 200:
             return response.json()
+        elif response.status_code == 400:
+            raise ValueError("Bad request")
         elif response.status_code == 404:
             raise LookupError("book results cannot be found")
         else:
@@ -103,6 +111,8 @@ class BookProcessor(object):
 
         if response.status_code == 200:
             return response.json()
+        elif response.status_code == 400:
+            raise ValueError("Bad request")
         elif response.status_code == 404:
             raise LookupError("booking results cannot be found")
         else:
@@ -122,6 +132,8 @@ class BookProcessor(object):
 
         if response.status_code == 200:
             return response.json()
+        elif response.status_code == 400:
+            raise ValueError("Bad request")
         elif response.status_code == 404:
             raise LookupError("cancel results cannot be found")
         else:

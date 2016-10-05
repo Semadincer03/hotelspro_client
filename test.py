@@ -9,7 +9,7 @@ from hotelspro_client.book import BookProcessor
 class Test(TestCase):
     def __init__(self, *args, **kwargs):
         self.book_processor = BookProcessor('http://localhost:8000/api/v2/',
-                                            'semadincer', 'qwer321')
+                                            'username', 'password')
         self.params = {'pax': '1', 'checkin': '2016-10-10',
                        'checkout': '2016-10-11', 'currency': 'USD',
                        'hotel_code': '10370d', 'client_nationality': 'tr'}
