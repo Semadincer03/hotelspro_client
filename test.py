@@ -10,10 +10,12 @@ class Test(TestCase):
     def __init__(self, *args, **kwargs):
         self.book_processor = BookProcessor('http://localhost:8000/api/v2/',
                                             'username', 'password')
-        self.params = {'pax': '1', 'checkin': '2016-10-10',
-                       'checkout': '2016-10-11', 'currency': 'USD',
-                       'hotel_code': '10370d', 'client_nationality': 'tr'}
+        self.params = {'pax': '1', 'checkin': '2016-10-20',
+                       'checkout': '2016-10-24', 'currency': 'USD',
+                       'hotel_code': '11b0dd', 'client_nationality': 'tr'}
         super(Test, self).__init__(*args, **kwargs)
+
+        self.search_resp = self.book_processor.search(self.params)
 
     def test_search(self):
         search_resp = self.book_processor.search(self.params)

@@ -25,7 +25,7 @@ class BookProcessor(object):
         elif response.status_code == 400:
             raise ValueError("Bad request")
         elif response.status_code == 404:
-            raise LookupError("search results cannot be found")
+            raise LookupError("cannot be found")
         else:
             return "search response status code:%s" % response.status_code
 
@@ -47,7 +47,7 @@ class BookProcessor(object):
         elif response.status_code == 400:
             raise ValueError("Bad request")
         elif response.status_code == 404:
-            raise LookupError("availability results cannot be found")
+            raise LookupError("cannot be found")
         else:
             return "availability response status code:%s" \
                    % response.status_code
@@ -69,7 +69,7 @@ class BookProcessor(object):
         elif response.status_code == 400:
             raise ValueError("Bad request")
         elif response.status_code == 404:
-            raise LookupError("provision results cannot be found")
+            raise LookupError("cannot be found")
         else:
             return "provision response status code:%s" % response.status_code
 
@@ -96,7 +96,7 @@ class BookProcessor(object):
         elif response.status_code == 400:
             raise ValueError("Bad request")
         elif response.status_code == 404:
-            raise LookupError("book results cannot be found")
+            raise LookupError("cannot be found")
         else:
             return "book response status code:%s" % response.status_code
 
@@ -114,7 +114,7 @@ class BookProcessor(object):
         elif response.status_code == 400:
             raise ValueError("Bad request")
         elif response.status_code == 404:
-            raise LookupError("booking results cannot be found")
+            raise LookupError("cannot be found")
         else:
             return "bookings response status code:%s" % response.status_code
 
@@ -135,7 +135,7 @@ class BookProcessor(object):
         elif response.status_code == 400:
             raise ValueError("Bad request")
         elif response.status_code == 404:
-            raise LookupError("cancel results cannot be found")
+            raise LookupError("cannot be found")
         else:
             return "cancel response status code:%s" % response.status_code
 
